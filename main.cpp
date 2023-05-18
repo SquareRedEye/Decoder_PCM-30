@@ -47,9 +47,19 @@ int main()
         amp += (*code)[i+4] == '1'? amp_standart_main : 0;
         cout << amp_standart_main << "[" << (*code)[i+4] << "] ";
     }
-    cout << "\nSignal amplitude: " << amp << " +- " << amp_standart_main / 2;
+    amp = (*code)[0] == '0'? -1*amp : amp; //
+    cout << "\nSignal amplitude: " << amp << " +- " << amp_standart_main / 2 << endl;
+    //01001101 /24
+    //00101101 / 1536
+    //00011101 / 192
+    //00000101 / 256
+    //00001001 / 448
+    //00001111 / 416
+    //00001100 / 400
 
     delete code;
+    cin.get();
+    cin.get();
     return main();
 }
 
